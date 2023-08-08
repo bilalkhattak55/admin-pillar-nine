@@ -1,14 +1,17 @@
-"use client"
+"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 // import { Link } from "react-router-dom";
 import Link from "next/link";
 import { useAuthContext } from "@/context/authContext";
+import Image from "next/image";
 // import profileIcon from "/public/assets/icons/profile.png";
 // import settingIcon from "/public/assets/icons/setting.svg";
+import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
 
 function TopIcons() {
-   const { isSideBarOpen, setIsSideBarOpen } = useAuthContext();
+  const { isSideBarOpen, setIsSideBarOpen } = useAuthContext();
   // const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   // const [isSideBarOpen, setIsSideBarOpen] = useState(false)
   const [isPopupVisible, setPopupVisible] = useState();
@@ -21,7 +24,6 @@ function TopIcons() {
       setPopupVisible(true);
     }
   };
-
 
   const handleOutsideClick = (event) => {
     if (popupRef.current && !popupRef.current.contains(event.target)) {
@@ -40,11 +42,12 @@ function TopIcons() {
   const handleClick = () => {
     setIsSideBarOpen(!isSideBarOpen);
   };
-
-  const handleLogout =()=> {
+const router = useRouter()
+  const handleLogout = () => {
+   
+    toast.success("Logout successfully!");
     router.push('/')
-    toast.success("Logout successfully!")
-  }
+  };
   return (
     <>
       <div className=" my-16 ms-auto flex justify-end items-center relative">
@@ -56,11 +59,14 @@ function TopIcons() {
             }`}
             onClick={handleClick}
           >
-            <img
-              src="/assets/icons/hamburgerIcon.svg"
+            {/* <Image
+              src="/assets/pillar-nine-menu.png"
               alt="hamburger icon"
-              className="w-full"
-            />
+              className="w-[25px] h-[25px]"
+              width='25'
+              height='25'
+            /> */}
+            <span className="material-icons text-black w-[32px] h-[32px]">menu</span>
           </button>
           <div className="flex justify-end items-center ms-auto">
             <div
@@ -69,8 +75,8 @@ function TopIcons() {
               onClick={handleSettingsClick}
             >
               <img
-              className="ms-5"
-                src='/assets/icons/pillar-nine-sett.png'
+                className="ms-5"
+                src="/assets/icons/pillar-nine-sett.png"
                 alt="pillar-nine-settingIcon"
                 height={"25px"}
                 width={"25px"}
@@ -90,7 +96,7 @@ function TopIcons() {
 
         {isPopupVisible && (
           <div
-            className="text-white bg-[#e6d366] absolute top-0 right-[9rem] text-left rounded-lg cursor-pointer w-[210px]"
+            className="text-white bg-[#e6d366] absolute top-0 right-[4.7rem] sm:right-[5rem] md:right-[7rem] text-left rounded-lg cursor-pointer w-[210px]"
             id="popup"
             ref={popupRef}
           >
@@ -111,7 +117,7 @@ function TopIcons() {
             <Link
               href={"/"}
               onClick={handleLogout}
-              className="flex no-underline	 p-3 ps-4 text-black"
+              className="flex no-underline p-3 ps-4 text-black"
             >
               <img src="/assets/icons/logout.svg" alt="" />
               <p className="ps-4 ">Logout</p>

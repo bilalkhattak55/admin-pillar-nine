@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import "./style.css";
+
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useAuthContext } from "@/context/authContext";
@@ -111,11 +111,12 @@ function Sidebar() {
               }`}
               style={{ display: "flex", padding: "1rem" }}
             >
-              <img
+              {/* <img
                 src="/assets/icons/new-dashboard.png"
                 alt=""
                 className="w-[22px] h-[22px]"
-              />
+              /> */}
+              <span className="material-icons text-black">grid_view</span>
               <span className="text-[12px] text-black md:text-[14px] font-semibold ">
                 Dashboard
               </span>
@@ -123,16 +124,17 @@ function Sidebar() {
 
             <Link
               onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
-              href="/dashboard/mint-propert-nft"
+              href="/dashboard/mint-property-nft"
               className={`${normalLink} ${
-                pathname === "/dashboard/nft-wallet" && "bg-[#e6d366]"
+                pathname === "/dashboard/mint-property-nft" && "bg-[#e6d366]"
               } `}
             >
-              <img
+              {/* <img
                 src="/assets/icons/new-wallet.png"
                 alt=""
                 className="w-[22px] h-[22px] mr-[.6rem]"
-              />
+              /> */}
+              <span class="material-icons text-black">real_estate_agent</span>
               <span className="text-[12px] md:text-[14px] text-black  font-semibold">
                 Mint Property NFT
               </span>
@@ -141,14 +143,11 @@ function Sidebar() {
               onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
               href="/dashboard/mint-practitioner-nft"
               className={`${normalLink} ${
-                pathname === "/dashboard/nft-wallet" && "bg-[#e6d366]"
+                pathname === "/dashboard/mint-practitioner-nft" &&
+                "bg-[#e6d366]"
               } `}
             >
-              <img
-                src="/assets/icons/new-wallet.png"
-                alt=""
-                className="w-[22px] h-[22px] mr-[.6rem]"
-              />
+              <span class="material-icons text-black">real_estate_agent</span>
               <span className="text-[12px] md:text-[14px] text-black  font-semibold">
                 Mint Practitioner NFT
               </span>
@@ -157,11 +156,11 @@ function Sidebar() {
               onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
               href="/dashboard/gift-property-nfts"
               className={`${normalLink} ${
-                pathname === "/dashboard/nft-wallet" && "bg-[#e6d366]"
+                pathname === "/dashboard/gift-property-nfts" && "bg-[#e6d366]"
               } `}
             >
               <img
-                src="/assets/icons/new-wallet.png"
+                src="/assets/icons/pillar-nine-gift.png"
                 alt=""
                 className="w-[22px] h-[22px] mr-[.6rem]"
               />
@@ -173,11 +172,12 @@ function Sidebar() {
               onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
               href="/dashboard/gift-practitioner-nfts"
               className={`${normalLink} ${
-                pathname === "/dashboard/nft-wallet" && "bg-[#e6d366]"
+                pathname === "/dashboard/gift-practitioner-nfts" &&
+                "bg-[#e6d366]"
               } `}
             >
               <img
-                src="/assets/icons/new-wallet.png"
+                src="/assets/icons/pillar-nine-gift.png"
                 alt=""
                 className="w-[22px] h-[22px] mr-[.6rem]"
               />
@@ -190,7 +190,7 @@ function Sidebar() {
               onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
               href="/dashboard/approved-nfts"
               className={`${normalLink} ${
-                pathname === "/dashboard/nft-wallet" && "bg-[#e6d366]"
+                pathname === "/dashboard/approved-nfts" && "bg-[#e6d366]"
               } `}
             >
               <img
@@ -207,13 +207,14 @@ function Sidebar() {
                 className="flex px-4 py-5 items-center no-underline gap-3 cursor-pointer"
                 onClick={controlPropertyNftsIcon}
               >
-                <img
+                {/* <img
                   src="/assets/icons/new-house.png"
                   alt=""
                   className="w-[22px] h-[22px]"
-                />
+                /> */}
+                <span className="material-icons text-black">group</span>
                 <span className="text-[12px] md:text-[14px] text-black font-semibold">
-                  Property
+                  Members
                 </span>
 
                 <span className="material-symbols-outlined ms-auto text-[gray]">
@@ -239,16 +240,20 @@ function Sidebar() {
                       isSideBarOpen && windowSize < 900 ? handleClick : null
                     }
                     href="/dashboard/all-users"
+                    // className={`${router.pathname === "/dashboard/mintpropertynft" ? subCategoryActiveLink : subCategoryNormalLink}
+                    //   flex items-center gap-3 ml-[3rem] mb-[1rem]
+                    //   `}
+                    // className={`${({ isActive }) =>
+                    //   isActive ? subCategoryActiveLink : subCategoryNormalLink}
                     className={`${subCategoryNormalLink} ${
-                      pathname === "/dashboard/mint-property-nft" &&
-                      "bg-[#e6d366]"
+                      pathname === "/dashboard/all-users" && "bg-[#e6d366]"
                     }`}
+
+                    // style={{display: 'flex', padding:'1rem'}}
                   >
-                    <img
-                      src="/assets/icons/new-nft.png"
-                      alt=""
-                      className="w-[22px] h-[22px]"
-                    />
+                    <span className="material-icons text-black">
+                      supervised_user_circle
+                    </span>
                     <span className="text-[12px] md:text-[14px] ms-2 text-black font-semibold">
                       All Users
                     </span>
@@ -259,15 +264,12 @@ function Sidebar() {
                     }
                     href="/dashboard/blocked-users"
                     className={`${subCategoryNormalLink} ${
-                      pathname === "/dashboard/mint-property-nft" &&
-                      "bg-[#e6d366]"
+                      pathname === "/dashboard/blocked-users" && "bg-[#e6d366]"
                     }`}
                   >
-                    <img
-                      src="/assets/icons/new-nft.png"
-                      alt=""
-                      className="w-[22px] h-[22px]"
-                    />
+                    <span className="material-icons text-black">
+                      group_remove
+                    </span>
                     <span className="text-[12px] md:text-[14px] ms-2 text-black font-semibold">
                       Blocked Users
                     </span>

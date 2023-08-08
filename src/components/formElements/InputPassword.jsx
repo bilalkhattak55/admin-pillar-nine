@@ -43,8 +43,8 @@ function InputPassword(props) {
 
                 <span
                     onClick={() => showPassFunch(password)}
-                    className="cursor-pointer material-icons  absolute top-0 right-0 mt-[10px] me-4"
-                    style={{color: 'white'}}
+                    className="cursor-pointer material-icons text-black  absolute top-0 right-0 mt-[10px] me-4"
+                    
                 >
                     {showPassword ? "visibility_off" : "visibility"}
                 </span>

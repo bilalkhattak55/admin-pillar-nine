@@ -17,9 +17,11 @@ import test from "/public/test.jpg";
 import Image from "next/image";
 import test2 from "/public/test2.jpg";
 import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 // import CodeVerificationPopup from "./components/popups/codeVerificationPopup/CodeVerificationPopup";
 
 export default function Home() {
+  const router = useRouter()
   // const [showOtpPopup, setShowOtpPopup] = useState(false);
   const [email, setEmail] = useState("");
   const [loading, setloading] = useState(false);
@@ -48,6 +50,8 @@ export default function Home() {
         }finally {
           setloading(false)
           action.resetForm()
+          toast.success("Login successfully")
+          router.push("/dashboard")
         }
 
       },
