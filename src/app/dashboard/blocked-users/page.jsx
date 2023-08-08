@@ -3,7 +3,7 @@ const Page = () => {
         <div className="bg-white h-[92vh]"
         style={{display: 'flex', justifyContent: "center", alignItems: 'center'}}>
              <div className="text-center flex justify-center">
-             <h2 className="mt-2 text-4xl font-bold tracking-light text-gray-900">Mint Property NFT</h2>
+             <h2 className="mt-2 text-4xl font-bold tracking-light text-gray-900">Blocked Users</h2>
              </div>
         </div>
     )

@@ -57,7 +57,7 @@ function TopIcons() {
             onClick={handleClick}
           >
             <img
-              src="/assets/icons/hamburgerIcon.svg"
+              src="/assets/pillar-nine-menu"
               alt="hamburger icon"
               className="w-full"
             />
