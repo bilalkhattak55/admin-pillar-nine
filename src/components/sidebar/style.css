@@ -1,23 +1,15 @@
-
 ::-webkit-scrollbar {
-    width: 3px; 
-    height: 150px;
-  }
-  
+  width: 3px;
+  height: 150px;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background-color: #d8c97c; /* Adjust the color as per your design */
-    border-radius: 5px; /* Adjust the border-radius to make it rounded */
-    height: 150px;
-  }
 
-  ::-webkit-scrollbar-track {
-    background-color: #dfd9b5;
-  }
-  
+::-webkit-scrollbar-thumb {
+  /* background-color: #d8c97c;  */
+  border-radius: 5px;
+  height: 150px;
+}
 
-  
- 
- 
-  
-  
+::-webkit-scrollbar-track {
+  background-color: #c6c692;
+}

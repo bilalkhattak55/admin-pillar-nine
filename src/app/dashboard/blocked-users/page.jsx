@@ -72,7 +72,7 @@ const Page = () => {
             <div className="w-full py-10 px-[1rem]  xl:px-[2.5rem] min-h-[400px] rounded-[24px] bg-white">
                 <div className="flex flex-col min-[1160px]:flex-row justify-between items-center  gap-3">
                     <h3 className="min-w-max  self-start text-heading-sm lg:text-[2rem]  leading-[18px] sm:leading-[44px] ">
-                        All Users
+                        Blocked Users
                     </h3>
 
                     <div className="flex justify-between items-center flex-wrap gap-3">
@@ -125,7 +125,7 @@ const Page = () => {
                     {filterPractitionerList.map((practitioner, index) => (
                         <div
                             key={index}
-                            className="grid  items-center gap-x-2.5 p-[0.8rem] rounded-xl bg-[#e6d466] text-white"
+                            className="grid  items-center gap-x-2.5 p-[0.8rem] rounded-xl bg-yellow-600 text-white"
                         >
                             <div className="flex justify-between items-center">
                                 <div className="flex ">
@@ -137,27 +137,28 @@ const Page = () => {
                                         alt="Profile"
                                     />
                                     <div className="ms-2 flex flex-col justify-center ">
-                                        <h4 className=" text-[1rem] sm:text-lg flex gap-2 items-center text-black">
+                                        <h4 className=" text-[1rem] sm:text-lg flex gap-2 items-center">
                                             Lisa Vicari
                                         </h4>
 
                                         <div class="">
-                                            <p class="whitespace-normal break-words text-[0.75rem] text-black">
+                                            <p class="whitespace-normal break-words text-[0.75rem]">
                                                 lisa@email.com
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <Link
-                                    href={`/dashboard/user-detail/11`}
+                                {/* <Link
+                                        href={`/admin/user-detail/${practitioner?.id || practitioner?.user?.id
+                                            }`}
+                                    > */}
+                                <button
+                                    type="button"
+                                    className=" px-3 text-[0.75rem]  bg-yellow-400 hover:bg-[#e8da7f] rounded-[12px] text-black shadow-lg  py-1.5 border-none cursor-pointer  font-semibold"
                                 >
-                                    <button
-                                        type="button"
-                                        className=" px-3 text-[0.75rem]  bg-yellow-400 hover:bg-[#e8da7f] rounded-[12px] text-black shadow-lg  py-1.5 border-none cursor-pointer  font-semibold"
-                                    >
-                                        View
-                                    </button>
-                                </Link>
+                                    Unblock
+                                </button>
+                                {/* </Link> */}
                             </div>
                         </div>
                     ))}

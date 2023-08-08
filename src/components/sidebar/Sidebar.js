@@ -1,21 +1,14 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import "./style.css"
-import { usePathname } from 'next/navigation'
-// import { Link, NavLink } from "react-router-dom";
+import "./style.css";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useAuthContext } from "@/context/authContext";
-// import { useRouter } from "next/router";
-// import downArrow from "../../../public/assets/icons/pillar-nine-down-arrow.png"
 
 function Sidebar() {
-  // const [isSideBarOpen, setIsSideBarOpen ] = useState(false);
   const { isSideBarOpen, setIsSideBarOpen } = useAuthContext(null);
-  // const router = useRouter();
-  // console.log("router.pathname", router.pathname);
   const pathname = usePathname();
- 
 
   const [windowSize, setWindowSize] = useState(null);
   const [practitionerNftsIcon, setPractitionerNftsIcon] = useState(false);
@@ -79,26 +72,19 @@ function Sidebar() {
     }
   }, [windowSize]);
 
-  // styles for active and normal links below
-  const activeLink =
-    "flex px-4 my-3 items-center  text-white no-underline  gap-2.5 h-14 bg-gradient-to-r from-[#1D2CDF] to-[#b731ff] border-l-[4px] border-0 border-solid border-white";
-
+  // styles for active and normal links belowz
   const normalLink =
     "flex px-4 py-2 items-center text-white no-underline  gap-2.5 h-14 border-l-[4px] border-0 border-solid border-white/0";
-
-  const subCategoryActiveLink =
-    "flex items-center my-4 ms-4 py-3 ps-4  text-white no-underline bg-gradient-to-r from-[#1D2CDF] to-[#b731ff] border-l-[4px] border-0 border-solid border-white";
 
   const subCategoryNormalLink =
     "flex items-center py-2 ms-4 py-3 ps-4 text-white no-underline border-l-[4px] border-0 border-solid border-white/0";
 
   return (
     <>
-      {/* bg-gradient-to-r from-[#12134d] via-[#10053c] to-[#12134d] */}
       {isSideBarOpen && (
         <div
           ref={sidebarRef}
-          className={`h-screen overflow-auto min-w-[200px] sm:min-w-[310px] md:min-w-[290px] bg-white py-6 border-[#454470] border-solid md:block`}
+          className={`h-screen overflow-auto min-w-[200px] sm:min-w-[310px] md:min-w-[290px] bg-white py-6 border-solid md:block`}
           style={
             isSideBarOpen && windowSize < 900
               ? {
@@ -120,13 +106,10 @@ function Sidebar() {
             <Link
               onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
               href="/dashboard"
-              // className={`${({ isActive }) =>
-              //   isActive
-              //     ? activeLink
-              //     : normalLink} flex px-4 my-3 items-center text-white no-underline  gap-2.5 h-14 border-l-[4px] border-0 border-solid border-white/0`}
-              className={`${normalLink} ${pathname === '/dashboard' && 'bg-[#e6d366]'}`}
+              className={`${normalLink} ${
+                pathname === "/dashboard" && "bg-[#e6d366]"
+              }`}
               style={{ display: "flex", padding: "1rem" }}
-              // className={`${normalLink} text-black ${activeColor && 'bg-black'} hover:bg-[#e6d366] hover:text-white`}
             >
               <img
                 src="/assets/icons/new-dashboard.png"
@@ -137,7 +120,88 @@ function Sidebar() {
                 Dashboard
               </span>
             </Link>
-{/* 
+
+            <Link
+              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
+              href="/dashboard/mint-propert-nft"
+              className={`${normalLink} ${
+                pathname === "/dashboard/nft-wallet" && "bg-[#e6d366]"
+              } `}
+            >
+              <img
+                src="/assets/icons/new-wallet.png"
+                alt=""
+                className="w-[22px] h-[22px] mr-[.6rem]"
+              />
+              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
+                Mint Property NFT
+              </span>
+            </Link>
+            <Link
+              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
+              href="/dashboard/mint-practitioner-nft"
+              className={`${normalLink} ${
+                pathname === "/dashboard/nft-wallet" && "bg-[#e6d366]"
+              } `}
+            >
+              <img
+                src="/assets/icons/new-wallet.png"
+                alt=""
+                className="w-[22px] h-[22px] mr-[.6rem]"
+              />
+              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
+                Mint Practitioner NFT
+              </span>
+            </Link>
+            <Link
+              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
+              href="/dashboard/gift-property-nfts"
+              className={`${normalLink} ${
+                pathname === "/dashboard/nft-wallet" && "bg-[#e6d366]"
+              } `}
+            >
+              <img
+                src="/assets/icons/new-wallet.png"
+                alt=""
+                className="w-[22px] h-[22px] mr-[.6rem]"
+              />
+              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
+                Gift Property NFTs
+              </span>
+            </Link>
+            <Link
+              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
+              href="/dashboard/gift-practitioner-nfts"
+              className={`${normalLink} ${
+                pathname === "/dashboard/nft-wallet" && "bg-[#e6d366]"
+              } `}
+            >
+              <img
+                src="/assets/icons/new-wallet.png"
+                alt=""
+                className="w-[22px] h-[22px] mr-[.6rem]"
+              />
+              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
+                Gift Practitioner NFTs
+              </span>
+            </Link>
+
+            <Link
+              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
+              href="/dashboard/approved-nfts"
+              className={`${normalLink} ${
+                pathname === "/dashboard/nft-wallet" && "bg-[#e6d366]"
+              } `}
+            >
+              <img
+                src="/assets/icons/new-wallet.png"
+                alt=""
+                className="w-[22px] h-[22px] mr-[.6rem]"
+              />
+              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
+                Approved NFTs
+              </span>
+            </Link>
             <div className=" hover:text-white">
               <div
                 className="flex px-4 py-5 items-center no-underline gap-3 cursor-pointer"
@@ -169,269 +233,45 @@ function Sidebar() {
                 </span>
               </div>
               {propertNftsIcon && (
-                <Link
-                  onClick={
-                    isSideBarOpen && windowSize < 900 ? handleClick : null
-                  }
-                  href="/dashboard/mint-property-nft"
-                  // className={`${router.pathname === "/dashboard/mintpropertynft" ? subCategoryActiveLink : subCategoryNormalLink}
-                  //   flex items-center gap-3 ml-[3rem] mb-[1rem]
-                  //   `}
-                  // className={`${({ isActive }) =>
-                  //   isActive ? subCategoryActiveLink : subCategoryNormalLink}
-                  className={`${subCategoryNormalLink} ${pathname === '/dashboard/mint-property-nft' && 'bg-[#e6d366]'}`}
-
-                  // style={{display: 'flex', padding:'1rem'}}
-                >
-                  <img
-                    src="/assets/icons/new-nft.png"
-                    alt=""
-                    className="w-[22px] h-[22px]"
-                  />
-                  <span className="text-[12px] md:text-[14px] ms-2 text-black font-semibold">
-                    Mint NFT
-                  </span>
-                </Link>
-              )}
-            </div> */}
-
-
-            
-              {/* <div> */}
-                {/* <div
-                  className="flex px-4 py-5 text-white items-center no-underline gap-3 cursor-pointer"
-                  onClick={controlpractitionerNftsIcon}
-                  
-                >
-                  <img
-                    src="/assets/icons/new-house.png"
-                    alt=""
-                    className="w-[22px] h-[22px]"
-                  />
-                  <span className="text-[12px] md:text-[14px] text-black font-semibold">
-                    Practitioner NFT
-                  </span>
-
-                  
-                  <span className="material-symbols-outlined ms-auto text-[gray]">
-                    {practitionerNftsIcon ? (
-                      <img
-                        src="/assets/icons/pillar-nine-down-arrow.png"
-                        alt=""
-                        className="w-[15px] h-[15px]"
-                      />
-                    ) : (
-                      <img
-                        src="/assets/icons/pillar-nine-right-arrow.png"
-                        alt=""
-                        className="w-[15px] h-[15px]"
-                      />
-                    )}
-                  </span>
-                </div> */}
-
-                {/* {practitionerNftsIcon && (
+                <>
                   <Link
                     onClick={
                       isSideBarOpen && windowSize < 900 ? handleClick : null
                     }
-                   
-                    href="/dashboard/mint-practitioner-nft"
-                    className={`${subCategoryNormalLink} ${pathname === '/dashboard/mint-practitioner-nft' && 'bg-[#e6d366]'} `}
-                    
+                    href="/dashboard/all-users"
+                    className={`${subCategoryNormalLink} ${
+                      pathname === "/dashboard/mint-property-nft" &&
+                      "bg-[#e6d366]"
+                    }`}
                   >
                     <img
                       src="/assets/icons/new-nft.png"
                       alt=""
-                      className="w-[22px] h-[22px] mr-[.6rem]"
+                      className="w-[22px] h-[22px]"
                     />
-                    <span className="text-[12px] md:text-[14px] font-semibold ms-2 text-black">
-                      Mint NFT
+                    <span className="text-[12px] md:text-[14px] ms-2 text-black font-semibold">
+                      All Users
                     </span>
                   </Link>
-                )}
-              </div> */}
-            
-            
-
-            
-            <Link
-              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
-              href="/dashboard/mint-propert-nft"
-              className={`${normalLink} ${pathname === '/dashboard/nft-wallet' && 'bg-[#e6d366]'} `}
-              
-            >
-              <img
-                src="/assets/icons/new-wallet.png"
-                alt=""
-                className="w-[22px] h-[22px] mr-[.6rem]"
-              />
-              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
-                Mint Property NFT
-              </span>
-            </Link>
-            <Link
-              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
-              href="/dashboard/mint-practitioner-nft"
-              className={`${normalLink} ${pathname === '/dashboard/nft-wallet' && 'bg-[#e6d366]'} `}
-             
-            >
-              <img
-                src="/assets/icons/new-wallet.png"
-                alt=""
-                className="w-[22px] h-[22px] mr-[.6rem]"
-              />
-              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
-               Mint Practitioner NFT
-              </span>
-            </Link>
-            <Link
-              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
-              href="/dashboard/gift-property-nfts"
-              className={`${normalLink} ${pathname === '/dashboard/nft-wallet' && 'bg-[#e6d366]'} `}
-              
-            >
-              <img
-                src="/assets/icons/new-wallet.png"
-                alt=""
-                className="w-[22px] h-[22px] mr-[.6rem]"
-              />
-              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
-                Gift Property NFTs
-              </span>
-            </Link>
-            <Link
-              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
-              href="/dashboard/gift-practitioner-nfts"
-              className={`${normalLink} ${pathname === '/dashboard/nft-wallet' && 'bg-[#e6d366]'} `}
-            >
-              <img
-                src="/assets/icons/new-wallet.png"
-                alt=""
-                className="w-[22px] h-[22px] mr-[.6rem]"
-              />
-              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
-                Gift Practitioner NFTs
-              </span>
-            </Link>
-            <Link
-              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
-              href="/dashboard/statistics"
-              className={`${normalLink} ${pathname === '/dashboard/nft-wallet' && 'bg-[#e6d366]'} `}
-              
-            >
-              <img
-                src="/assets/icons/new-wallet.png"
-                alt=""
-                className="w-[22px] h-[22px] mr-[.6rem]"
-              />
-              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
-                Statistics
-              </span>
-            </Link>
-            <Link
-              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
-              href="/dashboard/approved-nfts"
-              className={`${normalLink} ${pathname === '/dashboard/nft-wallet' && 'bg-[#e6d366]'} `}
-              
-            >
-              <img
-                src="/assets/icons/new-wallet.png"
-                alt=""
-                className="w-[22px] h-[22px] mr-[.6rem]"
-              />
-              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
-                Approved NFTs
-              </span>
-            </Link>
-            <Link
-              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
-              href="/dashboard/statistics"
-              className={`${normalLink} ${pathname === '/dashboard/nft-wallet' && 'bg-[#e6d366]'} `}
-              
-            >
-              <img
-                src="/assets/icons/new-wallet.png"
-                alt=""
-                className="w-[22px] h-[22px] mr-[.6rem]"
-              />
-              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
-                Statistics
-              </span>
-            </Link>
-            <div className=" hover:text-white">
-              <div
-                className="flex px-4 py-5 items-center no-underline gap-3 cursor-pointer"
-                onClick={controlPropertyNftsIcon}
-              >
-                <img
-                  src="/assets/icons/new-house.png"
-                  alt=""
-                  className="w-[22px] h-[22px]"
-                />
-                <span className="text-[12px] md:text-[14px] text-black font-semibold">
-                  Property
-                </span>
-
-                <span className="material-symbols-outlined ms-auto text-[gray]">
-                  {!propertNftsIcon ? (
+                  <Link
+                    onClick={
+                      isSideBarOpen && windowSize < 900 ? handleClick : null
+                    }
+                    href="/dashboard/blocked-users"
+                    className={`${subCategoryNormalLink} ${
+                      pathname === "/dashboard/mint-property-nft" &&
+                      "bg-[#e6d366]"
+                    }`}
+                  >
                     <img
-                      src="/assets/icons/pillar-nine-right-arrow.png"
+                      src="/assets/icons/new-nft.png"
                       alt=""
-                      className="w-[15px] h-[15px]"
+                      className="w-[22px] h-[22px]"
                     />
-                  ) : (
-                    <img
-                      src="/assets/icons/pillar-nine-down-arrow.png"
-                      alt=""
-                      className="w-[15px] h-[15px]"
-                    />
-                  )}
-                </span>
-              </div>
-              {propertNftsIcon && (<>
-                <Link
-                  onClick={
-                    isSideBarOpen && windowSize < 900 ? handleClick : null
-                  }
-                  href="/dashboard/all-users"
-                  // className={`${router.pathname === "/dashboard/mintpropertynft" ? subCategoryActiveLink : subCategoryNormalLink}
-                  //   flex items-center gap-3 ml-[3rem] mb-[1rem]
-                  //   `}
-                  // className={`${({ isActive }) =>
-                  //   isActive ? subCategoryActiveLink : subCategoryNormalLink}
-                  className={`${subCategoryNormalLink} ${pathname === '/dashboard/mint-property-nft' && 'bg-[#e6d366]'}`}
-
-                  // style={{display: 'flex', padding:'1rem'}}
-                >
-                  <img
-                    src="/assets/icons/new-nft.png"
-                    alt=""
-                    className="w-[22px] h-[22px]"
-                  />
-                  <span className="text-[12px] md:text-[14px] ms-2 text-black font-semibold">
-                    All Users
-                  </span>
-                </Link>
-                <Link
-                  onClick={
-                    isSideBarOpen && windowSize < 900 ? handleClick : null
-                  }
-                  href="/dashboard/all-users"
-                  
-                  className={`${subCategoryNormalLink} ${pathname === '/dashboard/mint-property-nft' && 'bg-[#e6d366]'}`}
-
-                  // style={{display: 'flex', padding:'1rem'}}
-                >
-                  <img
-                    src="/assets/icons/new-nft.png"
-                    alt=""
-                    className="w-[22px] h-[22px]"
-                  />
-                  <span className="text-[12px] md:text-[14px] ms-2 text-black font-semibold">
-                    Blocked Users
-                  </span>
-                </Link>
+                    <span className="text-[12px] md:text-[14px] ms-2 text-black font-semibold">
+                      Blocked Users
+                    </span>
+                  </Link>
                 </>
               )}
             </div>
