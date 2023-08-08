@@ -84,7 +84,7 @@ function Sidebar() {
       {isSideBarOpen && (
         <div
           ref={sidebarRef}
-          className={`h-screen overflow-auto min-w-[200px] sm:min-w-[310px] md:min-w-[290px] bg-white py-6 border-solid md:block`}
+          className={`h-screen overflow-auto border-r-2 border-solid  min-w-[200px] sm:min-w-[310px] md:min-w-[290px] bg-white py-6  md:block`}
           style={
             isSideBarOpen && windowSize < 900
               ? {
