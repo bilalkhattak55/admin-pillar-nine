@@ -39,6 +39,12 @@ export default function Home() {
           email: values.email,
           password: values.password,
         };
+        if(values.email === "pillarnine@gmail.com" && values.password === "pillar9") {
+          router.push("/dashboard")
+          toast.success("Login successfully")
+        }else {
+          toast.error('Login Failed!')
+        }
         try {
           setloading(true);
           console.log(payload)
@@ -50,10 +56,7 @@ export default function Home() {
         }finally {
           setloading(false)
           action.resetForm()
-          toast.success("Login successfully")
-          router.push("/dashboard")
         }
-
       },
     });
 

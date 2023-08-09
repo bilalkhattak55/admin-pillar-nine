@@ -4,16 +4,16 @@
 
 ::-webkit-scrollbar {
     width: 3px;
-    height: 150px;
+    height: 5px;
 }
 
 
 ::-webkit-scrollbar-thumb {
-    /* background-color: #d8c97c; */
+    background-color: #d8c97c;
     border-radius: 5px;
-    height: 150px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #c6c692;
+    background-color: #e6e6af;
 }
