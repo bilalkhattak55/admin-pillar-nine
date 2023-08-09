@@ -68,7 +68,7 @@ const Page = () => {
     );
 
     return (
-        <div className="text-black lg:max-w-[1200px] mx-6 relative xl:mx-auto border-[2px] border-solid border-[#e6d466] mb-5 rounded-[24px]">
+        <div className="text-black lg:max-w-[1200px] mx-6 relative xl:mx-auto border-[2px] border-solid border-primary mb-5 rounded-[24px]">
             <div className="w-full py-10 px-[1rem]  xl:px-[2.5rem] min-h-[400px] rounded-[24px] bg-white">
                 <div className="flex flex-col min-[1160px]:flex-row justify-between items-center  gap-3">
                     <h3 className="min-w-max  self-start text-heading-sm lg:text-[2rem]  leading-[18px] sm:leading-[44px] ">
@@ -97,7 +97,7 @@ const Page = () => {
                                     />
                                 </div>
                             )}
-                        <div className="bg-[#e6d466] p-0.5 rounded-[24px] ">
+                        <div className="bg-primary p-0.5 rounded-[24px] ">
                             <input
                                 className={`  px-4 bg-dark-blue border-0 rounded-[24px] w-[240px] placeholder:font-medium focus:outline-none text-[13px] ${"py-2.5"}`}
                                 placeholder={"Search User by name & email"}
@@ -125,7 +125,7 @@ const Page = () => {
                     {filterPractitionerList.map((practitioner, index) => (
                         <div
                             key={index}
-                            className="grid  items-center gap-x-2.5 p-[0.8rem] rounded-xl bg-yellow-600 text-white"
+                            className="grid  items-center gap-x-2.5 p-[0.8rem] rounded-xl bg-primary text-black"
                         >
                             <div className="flex justify-between items-center">
                                 <div className="flex ">
@@ -154,7 +154,7 @@ const Page = () => {
                                     > */}
                                 <button
                                     type="button"
-                                    className=" px-3 text-[0.75rem]  bg-yellow-400 hover:bg-[#e8da7f] rounded-[12px] text-black shadow-lg  py-1.5 border-none cursor-pointer  font-semibold"
+                                    className=" px-3 text-[0.75rem]  bg-yellow-400 hover:bg-[#e8da7f] rounded-[12px] text-black/70 shadow-lg  py-1.5 border-none cursor-pointer  font-semibold"
                                 >
                                     Unblock
                                 </button>
