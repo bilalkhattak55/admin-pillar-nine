@@ -134,7 +134,9 @@ function Sidebar() {
                 alt=""
                 className="w-[22px] h-[22px] mr-[.6rem]"
               /> */}
-              <span class="material-icons text-black">real_estate_agent</span>
+              <span className="material-icons text-black">
+                real_estate_agent
+              </span>
               <span className="text-[12px] md:text-[14px] text-black  font-semibold">
                 Mint Property NFT
               </span>
