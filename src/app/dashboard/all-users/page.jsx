@@ -125,7 +125,7 @@ const Page = () => {
                     {filterPractitionerList.map((practitioner, index) => (
                         <div
                             key={index}
-                            className="grid  items-center gap-x-2.5 p-[0.8rem] rounded-xl bg-[#e6d466] text-white"
+                            className="grid  items-center gap-x-2.5 p-[0.8rem] rounded-xl bg-primary text-white"
                         >
                             <div className="flex justify-between items-center">
                                 <div className="flex ">
@@ -153,7 +153,7 @@ const Page = () => {
                                 >
                                     <button
                                         type="button"
-                                        className=" px-3 text-[0.75rem]  bg-yellow-400 hover:bg-[#e8da7f] rounded-[12px] text-black shadow-lg  py-1.5 border-none cursor-pointer  font-semibold"
+                                        className=" px-3 text-[0.75rem]  bg-yellow-400 hover:bg-[#e8da7f] rounded-[12px] text-black/70 shadow-lg  py-1.5 border-none cursor-pointer  font-semibold"
                                     >
                                         View
                                     </button>

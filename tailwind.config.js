@@ -17,6 +17,9 @@ module.exports = {
         "label-md": "19px",
         "label-lg": "22px",
       },
+      colors: {
+        primary: "#e6d466",
+      },
     },
     screens: {
       xs: "0px",

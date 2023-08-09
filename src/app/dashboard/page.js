@@ -12,9 +12,12 @@ const Page = () => {
       <div className="py-4  px-8 max-w-6xl rounded-lg ">
         <h1 className="text-3xl font-semibold text-black">Statistics</h1>
         <div className="flex flex-wrap items-center w-full gap-3 py-4">
-          <div className="basis-[300px] flex   items-center  gap-6 bg-yellow-600 pl-4 pr-2 py-6 rounded-lg">
+          <div className="basis-[300px] flex   items-center  gap-6 bg-primary text-black pl-4 pr-2 py-6 rounded-lg">
             <div className="bg-primary-main flex justify-center items-center w-[70px] aspect-square border-[1px] border-white border-solid rounded-full">
-              <span class="material-icons" style={{ fontSize: "36px" }}>
+              <span
+                class="material-icons text-white"
+                style={{ fontSize: "36px" }}
+              >
                 group
               </span>
             </div>
@@ -23,7 +26,7 @@ const Page = () => {
               <p className="text-2xl mt-2 font-normal">Users</p>
             </div>
           </div>
-          <div className="basis-[300px] flex  items-center gap-6 bg-yellow-600 pl-4 pr-2 py-6 rounded-lg">
+          <div className="basis-[300px] flex  items-center gap-6 bg-primary text-black pl-4 pr-2 py-6 rounded-lg">
             <div className="bg-primary-main flex justify-center items-center w-[70px] aspect-square border-[1px] border-white border-solid   rounded-full">
               <Image
                 src={mainProperty}
@@ -38,7 +41,7 @@ const Page = () => {
               <p className="text-2xl mt-2 font-normal">Property NFT</p>
             </div>
           </div>
-          <div className="basis-[300px] flex  items-center gap-5 bg-yellow-600 pl-4 pr-2 py-6 rounded-lg">
+          <div className="basis-[300px] flex  items-center gap-5 bg-primary text-black pl-4 pr-2 py-6 rounded-lg">
             <div className="bg-primary-main flex justify-center items-center w-[70px] aspect-square border-[1px] border-white border-solid  rounded-full">
               <Image
                 width="100"
