@@ -41,30 +41,10 @@ const Page = () => {
   const nft_gifted_user = false;
   const docCategory = "Settlement";
 
-//   const handleBlockchainDataPopup = () => {
-//     setDataPopup(!dataPopup);
-//   };
-//   const data = {
-//     tokenId: "1691432706727",
-//     owner: "36d836cebe9e473d99894e85a3a30bab",
-//     tokenURI: "-",
-//     nftDetail: {
-//       name: "jeremy swyers",
-//       title: "86CFMHHM+HP@",
-//       price: "50.00000",
-//       image: "https://consortiamedia.s3.amazonaws.com/16914326783813135715.png",
-//       address: "11111 Stoney View Ln, St. Louis, MO 63146, USA",
-//     },
-//   };
 
   return (
     <>
-      {/* {dataPopup && (
-        <BlockchainDataPopup
-          setDataPopup={setDataPopup}
-          data={data}
-        />
-      )} */}
+      
       <div className="py-4 w-full px-2 sm:px-10">
         <h1 className="text-heading-xs text-black font-bold sm:text-heading-sm lg:text-heading-lg font-graphik leading-[18px] sm:leading-[44px] ">
           Property NFT Details

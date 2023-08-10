@@ -55,7 +55,7 @@ function PendingNft() {
                         </Link>
 
                         {!is_minted && (
-                          <p className="absolute bottom-1 left-1 bg-[#d9512c] px-3 py-1 rounded text-[9px] lg:text-[14px]">
+                          <p className="absolute text-white bottom-1 left-1 bg-[#d9512c] px-3 py-1 rounded text-[9px] lg:text-[14px]">
                             Pending
                           </p>
                         )}

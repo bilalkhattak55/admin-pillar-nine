@@ -99,7 +99,7 @@ function Sidebar() {
             <img
               src="/pillar-9-logo (1).png"
               alt="Consortia logo"
-              className="w-[171px] h-[62px]"
+              className="w-[172px] h-[50px]"
             />
           </Link>
           <nav className="mt-[4rem]">
@@ -134,7 +134,9 @@ function Sidebar() {
                 alt=""
                 className="w-[22px] h-[22px] mr-[.6rem]"
               /> */}
-              <span class="material-icons text-black">real_estate_agent</span>
+              <span className="material-icons text-black">
+                real_estate_agent
+              </span>
               <span className="text-[12px] md:text-[14px] text-black  font-semibold">
                 Mint Property NFT
               </span>
