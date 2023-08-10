@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 // import CodeVerificationPopup from "./components/popups/codeVerificationPopup/CodeVerificationPopup";
 
 export default function Home() {
-  const router = useRouter()
+  const router = useRouter();
   // const [showOtpPopup, setShowOtpPopup] = useState(false);
   const [email, setEmail] = useState("");
   const [loading, setloading] = useState(false);
@@ -39,23 +39,26 @@ export default function Home() {
           email: values.email,
           password: values.password,
         };
-        if(values.email === "pillarnine@gmail.com" && values.password === "pillar9") {
-          router.push("/dashboard")
-          toast.success("Login successfully")
-        }else {
-          toast.error('Login Failed!')
+        if (
+          values.email === "pillarnine@gmail.com" &&
+          values.password === "pillar9"
+        ) {
+          router.push("/dashboard");
+          toast.success("Login successfully");
+        } else {
+          toast.error("Login Failed!");
         }
         try {
           setloading(true);
-          console.log(payload)
+          console.log(payload);
           setShowOtpPopup(true);
 
           console.log("login info", payload);
-        }catch(error) {
-          console.log(error.message)
-        }finally {
-          setloading(false)
-          action.resetForm()
+        } catch (error) {
+          console.log(error.message);
+        } finally {
+          setloading(false);
+          action.resetForm();
         }
       },
     });
@@ -71,14 +74,16 @@ export default function Home() {
     });
   };
 
-  const [isForgotPassword ,setIsForgotPassword] = useState(false)
+  const [isForgotPassword, setIsForgotPassword] = useState(false);
 
   const handleForgotPassword = () => {
     setIsForgotPassword((prev) => !prev);
   };
   return (
     <>
-      {isForgotPassword && <ForgotPwd setIsForgotPassword={setIsForgotPassword} />}
+      {isForgotPassword && (
+        <ForgotPwd setIsForgotPassword={setIsForgotPassword} />
+      )}
       <div className="h-screen overflow-auto">
         {/* login --- container */}
         <div className="flex h-full max-w-[90%] mx-auto md:max-w-full">
@@ -157,17 +162,6 @@ export default function Home() {
                     isLoading={loading ? true : null}
                   />
                 </div>
-                {/* <div className="text-center mt-2">
-                  <span className="mr-2 text-[10px] sm:text-[12px] lg:text-[14px]">
-                    Don't have an account yet?
-                  </span>
-                  <Link
-                    className="text-secondary-purpleBlue font-semibold text-[10px] sm:text-[12px] lg:text-[14px]"
-                    href="/auth/signup"
-                  >
-                    Signup
-                  </Link>
-                </div> */}
               </div>
             </form>
           </div>

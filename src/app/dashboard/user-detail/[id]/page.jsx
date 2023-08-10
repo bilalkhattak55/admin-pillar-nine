@@ -78,8 +78,7 @@ const UserDetailPage = () => {
                     rows={changeRoleRows}
                     btnContent="Update"
                     defaultRole={"Consumer"}
-                // setDataReSync={setDataReSync}
-                // id={id}
+
                 />
             )}
             {/* Block User Popup */}
