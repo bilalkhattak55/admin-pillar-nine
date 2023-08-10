@@ -96,9 +96,10 @@ const router = useRouter()
 
         {isPopupVisible && (
           <div
-            className="text-white bg-[#e6d366] absolute top-0 right-[4.7rem] sm:right-[5rem] md:right-[7rem] text-left rounded-lg cursor-pointer w-[210px]"
+            className=" bg-white hover:bg-[#e6d366] absolute top-0 right-[4.7rem] sm:right-[5rem] md:right-[7rem] text-left rounded-lg cursor-pointer w-[210px]"
             id="popup"
             ref={popupRef}
+            style={{border: '1px solid black'}}
           >
             {/* <Link
               href={"/dashboard/"}

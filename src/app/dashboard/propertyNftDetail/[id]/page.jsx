@@ -11,27 +11,27 @@ import downloadIcon from "public/assets/icons/pillar-nine-download.png";
 const Page = () => {
   // blockchain button on different screens
 
-  const [blockchainButton, setBlockchainButton] = useState("");
+//   const [blockchainButton, setBlockchainButton] = useState("");
   const [windowSize, setWindowSize] = useState("");
   const [dataPopup, setDataPopup] = useState(false);
 
-  const handleSizing = () => {
-    setWindowSize(window.innerWidth);
-    if (windowSize < 650) {
-      setBlockchainButton("Blockchain");
-    } else {
-      setBlockchainButton("View Blockchain Data");
-    }
-  };
+//   const handleSizing = () => {
+//     setWindowSize(window.innerWidth);
+//     if (windowSize < 650) {
+//       setBlockchainButton("Blockchain");
+//     } else {
+//       setBlockchainButton("View Blockchain Data");
+//     }
+//   };
 
-  useEffect(() => {
-    handleSizing();
-    window.addEventListener("sizing", handleSizing);
+//   useEffect(() => {
+//     // handleSizing();
+//     window.addEventListener("resize", handleSizing);
 
-    return () => {
-      window.removeEventListener("resize", handleSizing);
-    };
-  }, [windowSize]);
+//     return () => {
+//       window.removeEventListener("resize", handleSizing);
+//     };
+//   }, [windowSize]);
 
   //temperory;
   const is_minted = true;
@@ -41,30 +41,30 @@ const Page = () => {
   const nft_gifted_user = false;
   const docCategory = "Settlement";
 
-  const handleBlockchainDataPopup = () => {
-    setDataPopup(!dataPopup);
-  };
-  const data = {
-    tokenId: "1691432706727",
-    owner: "36d836cebe9e473d99894e85a3a30bab",
-    tokenURI: "-",
-    nftDetail: {
-      name: "jeremy swyers",
-      title: "86CFMHHM+HP@",
-      price: "50.00000",
-      image: "https://consortiamedia.s3.amazonaws.com/16914326783813135715.png",
-      address: "11111 Stoney View Ln, St. Louis, MO 63146, USA",
-    },
-  };
+//   const handleBlockchainDataPopup = () => {
+//     setDataPopup(!dataPopup);
+//   };
+//   const data = {
+//     tokenId: "1691432706727",
+//     owner: "36d836cebe9e473d99894e85a3a30bab",
+//     tokenURI: "-",
+//     nftDetail: {
+//       name: "jeremy swyers",
+//       title: "86CFMHHM+HP@",
+//       price: "50.00000",
+//       image: "https://consortiamedia.s3.amazonaws.com/16914326783813135715.png",
+//       address: "11111 Stoney View Ln, St. Louis, MO 63146, USA",
+//     },
+//   };
 
   return (
     <>
-      {dataPopup && (
+      {/* {dataPopup && (
         <BlockchainDataPopup
           setDataPopup={setDataPopup}
           data={data}
         />
-      )}
+      )} */}
       <div className="py-4 w-full px-2 sm:px-10">
         <h1 className="text-heading-xs text-black font-bold sm:text-heading-sm lg:text-heading-lg font-graphik leading-[18px] sm:leading-[44px] ">
           Property NFT Details
@@ -94,13 +94,13 @@ const Page = () => {
                     {/* {propertyData && propertyData?.title} */}
                     86CFMHHM+HP@
                   </h2>
-                  <Image
+                  {/* <Image
                     className="w-[40px] h-[40px] cursor-pointer hidden sm:inline"
                     src={downloadIcon}
                     alt="Download Icon"
                     width="100"
                     height="100"
-                  />
+                  /> */}
                 </div>
                 <span className="text-[13px] md:text-[20px] text-black font-semibold">
                   Minter
@@ -137,35 +137,40 @@ const Page = () => {
                       Edit And Mint
                     </button>
                   </>
-                ) : (
-                  <button
-                    onClick={handleBlockchainDataPopup}
-                    type="button"
-                    className={`px-8 py-2 mt-8 bg-[#e6d366] rounded-[24px] text-black border-none cursor-pointer text-sm  font-semibold`}
-                  >
-                    {blockchainButton}
-                  </button>
-                )}
+                ) : ""
+                // (
+                //   <button
+                //     onClick={handleBlockchainDataPopup}
+                //     type="button"
+                //     className={`px-8 py-2 mt-8 bg-[#e6d366] rounded-[24px] text-black border-none cursor-pointer text-sm  font-semibold`}
+                //   >
+                //     {blockchainButton}
+                //   </button>
+                // )
+                }
 
                 {/* here we show the name of practitioner, added to this minting */}
-                {practitioner_id && (
+                {/* {practitioner_id && (
                   <div className="practitioner mt-3 md:mt-6">
                     <span className="text-[13px] md:text-[20px] font-semibold text-black">
                       Practitioner &nbsp;&nbsp;
                     </span>
                     <span className="text-[9px] sm:text-[14px] text-black">
                       jeremy sweyers
-                      {/* {practitionerData?.firstName && capitalizeName(practitionerData?.firstName)} */}
-                      {/* {" "} */}
-                      {/* {practitionerData?.lastName && capitalizeName(practitionerData?.lastName)}{" "} */}
                     </span>
                   </div>
-                )}
+                )} */}
+                <div className="mt-6">
+                    <h4  className="text-[14px] md:text-[22px] font-semibold text-black">Poperty address</h4>
+                    <p className="text-black mt-2">
+                    11111 Stoney View Ln, St. Louis, MO 63146, USA
+                    </p>
+                </div>
               </div>
             </div>
             {/* nft detail bottom */}
             {!failed_reason && (
-              <div className="py-10">
+              <div className="py-10 mt-5">
                 <div className="flex justify-between items-center">
                   <h3 className="text-[16px] lg:text-[24px] font-medium text-black">
                     Transaction History
@@ -176,7 +181,7 @@ const Page = () => {
                     alt="Download Icon"
                   />
                 </div>
-                <div className="pt-5 md:pt-10 ">
+                <div className="pt-5 md:pt-5 ">
                   <table className="w-full border-collapse">
                     <thead>
                       <tr className="[&>*]:text-start text-black [&>*]:font-medium sm:[&>*]:font-semibold [&>*]:p-4  [&>*]:text-[9px] lg:[&>*]:text-[14px] [&>*]:border-0 [&>*]:border-b-[1px] [&>*]:border-solid [&>*]:border-b-[#e6d366]">

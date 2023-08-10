@@ -188,6 +188,23 @@ function Sidebar() {
 
             <Link
               onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
+              href="/dashboard/property-pending-nfts"
+              className={`${normalLink} ${
+                pathname === "/dashboard/property-pending-nfts" && "bg-[#e6d366]"
+              } `}
+            >
+              <img
+                src="/assets/icons/pillar-nine-pending.png"
+                alt=""
+                className="w-[22px] h-[22px] mr-[.6rem]"
+              />
+              <span className="text-[12px] md:text-[14px] text-black  font-semibold">
+                Pending NFTs
+              </span>
+            </Link>
+
+            <Link
+              onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
               href="/dashboard/approved-nfts"
               className={`${normalLink} ${
                 pathname === "/dashboard/approved-nfts" && "bg-[#e6d366]"

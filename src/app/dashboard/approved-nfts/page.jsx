@@ -55,7 +55,7 @@ const is_minted = true;
             className="w-full py-10 px-5 sm:p-10 rounded-[24px]"
           >
             {/* cards */}
-            <div className="grid bg-white grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-12 sm:mt-24">
+            <div className="grid bg-white grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-4">
               {
                 approved.map((item, i) => (
                   <>
@@ -64,7 +64,7 @@ const is_minted = true;
                       className="p-2 rounded-[15px] bg-[#e6d366]"
                     >
                       <div className="relative ">
-                        <Link href={`/dashboard/approved-nfts/${i}`}>
+                        <Link href={`/dashboard/propertyNftDetail/${i}`}>
                           <Image
                             src={propertyImg}
                             alt="house"
@@ -89,7 +89,7 @@ const is_minted = true;
                         </p>
 
                         <div className="flex justify-between items-center">
-                          <Link href={`/dashboard/approved-nfts/${i}`}>
+                          <Link href={`/dashboard/propertyNftDetail/${i}`}>
                             <button
                               type="button"
                               className={`bg-[#facc15] rounded-lg text-black px-5 py-1.5 border-none cursor-pointer text-sm  font-semibold`}
