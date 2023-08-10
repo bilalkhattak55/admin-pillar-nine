@@ -25,7 +25,7 @@ const GiftNftPopup = ({ setGiftPopup }) => {
     };
     return (
         <>
-            <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50 ">
+            <div className="fixed inset-0 flex items-center justify-center z-50  ">
                 <div className="bg-light-blue p-7 sm:p-10 relative  w-[80%] sm:w-[380px] md:w-[571px] rounded-[24px] text-black bg-white ">
                     <div className="flex justify-between items-center">
                         <h2 className="text-heading-xs sm:text-heading-sm md:text-heading-lg font-semibold ">
