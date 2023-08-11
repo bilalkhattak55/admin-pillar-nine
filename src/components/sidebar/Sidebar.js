@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useAuthContext } from "@/context/authContext";
+import Image from "next/image";
 
 function Sidebar() {
   const { isSideBarOpen, setIsSideBarOpen } = useAuthContext(null);
@@ -96,7 +97,9 @@ function Sidebar() {
           }
         >
           <Link href={"/dashboard"} className="flex justify-center mt-8">
-            <img
+            <Image
+              height="100"
+              width="100"
               src="/pillar-9-logo (1).png"
               alt="Consortia logo"
               className="w-[172px] h-[50px]"
@@ -111,11 +114,6 @@ function Sidebar() {
               }`}
               style={{ display: "flex", padding: "1rem" }}
             >
-              {/* <img
-                src="/assets/icons/new-dashboard.png"
-                alt=""
-                className="w-[22px] h-[22px]"
-              /> */}
               <span className="material-icons text-black">grid_view</span>
               <span className="text-[12px] text-black md:text-[14px] font-semibold ">
                 Dashboard
@@ -129,11 +127,6 @@ function Sidebar() {
                 pathname === "/dashboard/mint-property-nft" && "bg-[#e6d366]"
               } `}
             >
-              {/* <img
-                src="/assets/icons/new-wallet.png"
-                alt=""
-                className="w-[22px] h-[22px] mr-[.6rem]"
-              /> */}
               <span className="material-icons text-black">
                 real_estate_agent
               </span>
@@ -161,7 +154,9 @@ function Sidebar() {
                 pathname === "/dashboard/gift-property-nfts" && "bg-[#e6d366]"
               } `}
             >
-              <img
+              <Image
+                height="100"
+                width="100"
                 src="/assets/icons/pillar-nine-gift.png"
                 alt=""
                 className="w-[22px] h-[22px] mr-[.6rem]"
@@ -178,7 +173,9 @@ function Sidebar() {
                 "bg-[#e6d366]"
               } `}
             >
-              <img
+              <Image
+                height="100"
+                width="100"
                 src="/assets/icons/pillar-nine-gift.png"
                 alt=""
                 className="w-[22px] h-[22px] mr-[.6rem]"
@@ -192,10 +189,13 @@ function Sidebar() {
               onClick={isSideBarOpen && windowSize < 900 ? handleClick : null}
               href="/dashboard/property-pending-nfts"
               className={`${normalLink} ${
-                pathname === "/dashboard/property-pending-nfts" && "bg-[#e6d366]"
+                pathname === "/dashboard/property-pending-nfts" &&
+                "bg-[#e6d366]"
               } `}
             >
-              <img
+              <Image
+                height="100"
+                width="100"
                 src="/assets/icons/pillar-nine-pending.png"
                 alt=""
                 className="w-[22px] h-[22px] mr-[.6rem]"
@@ -212,7 +212,9 @@ function Sidebar() {
                 pathname === "/dashboard/approved-nfts" && "bg-[#e6d366]"
               } `}
             >
-              <img
+              <Image
+                height="100"
+                width="100"
                 src="/assets/icons/new-wallet.png"
                 alt=""
                 className="w-[22px] h-[22px] mr-[.6rem]"
@@ -238,13 +240,17 @@ function Sidebar() {
 
                 <span className="material-symbols-outlined ms-auto text-[gray]">
                   {!propertNftsIcon ? (
-                    <img
+                    <Image
+                      height="100"
+                      width="100"
                       src="/assets/icons/pillar-nine-right-arrow.png"
                       alt=""
                       className="w-[15px] h-[15px]"
                     />
                   ) : (
-                    <img
+                    <Image
+                      height="100"
+                      width="100"
                       src="/assets/icons/pillar-nine-down-arrow.png"
                       alt=""
                       className="w-[15px] h-[15px]"

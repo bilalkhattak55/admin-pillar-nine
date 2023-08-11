@@ -165,7 +165,7 @@ const Page = () => {
                 </div>
 
                 {/* pagination */}
-                {isDataLoaded && filterPractitionerList.length > 15 && (
+                {/* {isDataLoaded && filterPractitionerList.length > 15 && (
                     <div className="w-full mt-8 flex justify-center gap-4 [&>*]:border-0 [&>*]:cursor-pointer">
                         <button
                             onClick={handlePreviousPage}
@@ -173,7 +173,7 @@ const Page = () => {
                             className={`${currentPage === 1 ? "text-white/50" : "text-white"
                                 } text-[18px] bg-white/0`}
                         >
-                            {/* {"<"} */}
+                            
                             <span className="flex justify-center px-2 items-center gap-1 border-solid border-[1px] border-white rounded-[4px]">
                                 <img src="/assets/icons/prev.svg" alt="prev icon" /> Prev
                             </span>
@@ -186,7 +186,7 @@ const Page = () => {
                             return (
                                 <button
                                     className={`text-white font-medium w-[30px] h-[30px] rounded-full ${pageNumber === currentPage
-                                        ? // ? "bg-primary-main hover:bg-primary-main/70"
+                                        ? 
                                         "bg-gradient-to-r bg-[#1D2CDF] hover:bg-primary-main/70"
                                         : "bg-white/0"
                                         }`}
@@ -211,7 +211,7 @@ const Page = () => {
                             </span>
                         </button>
                     </div>
-                )}
+                )} */}
             </div>
         </div>
     );

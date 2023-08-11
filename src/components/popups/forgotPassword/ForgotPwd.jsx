@@ -15,7 +15,7 @@ import { toast } from "react-hot-toast";
 
 function ForgotPwd({ setIsForgotPassword }) {
 
-  
+
 
 
   const initialValues = {
@@ -47,13 +47,8 @@ function ForgotPwd({ setIsForgotPassword }) {
               setIsForgotPassword(false);
             }}
           >
-            <img
-              src='/cross.svg'
-              alt="cross.svg"
-              className="w-[22px] bg-black border-0 h-[22px] sm:w-[27px] sm:h-[27px] absolute right-4 sm:right-4 top-[1rem] sm:top-[1rem] cursor-pointer "
-            style={{borderRadius: '3px'}}
-            />
-            {/* <span className="material-symbols-outlined">dangerous</span> */}
+
+            <span className="material-icons cursor-pointer absolute right-4 text-black sm:right-4 top-[1rem] sm:top-[1rem]" style={{ fontSize: "1.5rem" }}>close</span>
           </div>
           <h2 className="text-sm sm:text-base md:text-lg lg:text-xl text-black font-semibold ">
             Reset Password
@@ -84,7 +79,7 @@ function ForgotPwd({ setIsForgotPassword }) {
               type="submit"
               isLoading={loading ? true : null}
               py="sm:py-2.5"
-              // onClick={{handleSubmit}}
+            // onClick={{handleSubmit}}
             />
           </div>
         </form>

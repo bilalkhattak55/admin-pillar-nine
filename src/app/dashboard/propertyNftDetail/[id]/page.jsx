@@ -152,7 +152,9 @@ const Page = () => {
                   <h3 className="text-[16px] lg:text-[24px] font-medium text-black">
                     Transaction History
                   </h3>
-                  <img
+                  <Image
+                    height="100"
+                    width="100"
                     className={`w-[40px] h-[40px] cursor-pointer  sm:hidden `}
                     src="/assets/icons/export.svg"
                     alt="Download Icon"

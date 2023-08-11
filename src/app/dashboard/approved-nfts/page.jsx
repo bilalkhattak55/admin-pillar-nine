@@ -106,7 +106,7 @@ const Page = () => {
 
             {/* pagination */}
 
-            <div className="w-full mt-8 flex justify-center gap-4 [&>*]:border-0 [&>*]:cursor-pointer"
+            {/* <div className="w-full mt-8 flex justify-center gap-4 [&>*]:border-0 [&>*]:cursor-pointer"
               style={{ display: 'none' }}
             >
               <button
@@ -115,7 +115,7 @@ const Page = () => {
                 className={`${currentPage === 1 ? "text-white/50" : "text-white"
                   } text-[18px] bg-white/0`}
               >
-                {/* {"<"} */}
+                
                 <span className="flex justify-center px-2 items-center gap-1 border-solid border-[1px] border-white rounded-[4px]">
                   <img src="/assets/icons/prev.svg" alt="prev icon" /> Prev
                 </span>
@@ -151,12 +151,12 @@ const Page = () => {
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
               >
-                {/* {">"} */}
+                
                 <span className="flex justify-center items-center gap-1 px-2 border-solid border-[1px] border-white rounded-[4px]">
                   Next <img src="/assets/icons/next.svg" alt="next icon" />
                 </span>
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

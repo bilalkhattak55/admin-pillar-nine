@@ -1,19 +1,14 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-// import { Link } from "react-router-dom";
 import Link from "next/link";
 import { useAuthContext } from "@/context/authContext";
 import Image from "next/image";
-// import profileIcon from "/public/assets/icons/profile.png";
-// import settingIcon from "/public/assets/icons/setting.svg";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
 function TopIcons() {
   const { isSideBarOpen, setIsSideBarOpen } = useAuthContext();
-  // const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  // const [isSideBarOpen, setIsSideBarOpen] = useState(false)
   const [isPopupVisible, setPopupVisible] = useState();
   const popupRef = useRef(null);
 
@@ -76,12 +71,12 @@ function TopIcons() {
               id="settings-button"
               onClick={handleSettingsClick}
             >
-              <img
-                className="ms-5"
+              <Image
+                className="ms-5 h-[25px] w-[25px]"
                 src="/assets/icons/pillar-nine-sett.png"
                 alt="pillar-nine-settingIcon"
-                height={"25px"}
-                width={"25px"}
+                height="25"
+                width="25"
               />
             </div>
             {/* <Link href="/dashboard/" className="rounded-full">
@@ -122,7 +117,7 @@ function TopIcons() {
               onClick={handleLogout}
               className="flex no-underline p-3 ps-4 text-black"
             >
-              <img src="/assets/icons/logout.svg" alt="" />
+              <Image height="20" width="20" src="/assets/icons/logout.svg" alt="" />
               <p className="ps-4 ">Logout</p>
             </Link>
           </div>
