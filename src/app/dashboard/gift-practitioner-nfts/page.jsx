@@ -27,8 +27,8 @@ const Page = () => {
     return (
         <div className="py-4 w-full px-2 sm:px-10">
             {/* heading */}
-            <h1 className="text-heading-xs sm:text-heading-sm lg:text-heading-lg leading-[18px] font-semibold sm:leading-[44px] text-black">
-                Practitioner Nfts
+            <h1 className="text-heading-sm lg:text-heading-lg font-semibold leading-[18px] sm:leading-[44px] text-black">
+                Practitioner NFTs
             </h1>
 
             {/* body */}

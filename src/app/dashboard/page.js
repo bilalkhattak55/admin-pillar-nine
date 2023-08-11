@@ -10,7 +10,9 @@ const Page = () => {
   return (
     <>
       <div className="py-4  px-8 max-w-6xl rounded-lg ">
-        <h1 className="text-3xl font-semibold text-black">Statistics</h1>
+        <h1 className="text-heading-sm lg:text-heading-lg font-semibold leading-[18px] sm:leading-[44px] text-black">
+          Statistics
+        </h1>
         <div className="flex flex-wrap items-center w-full gap-3 py-4">
           <div className="basis-[300px] flex   items-center  gap-6 bg-primary text-black pl-4 pr-2 py-6 rounded-lg">
             <div className="bg-primary-main flex justify-center items-center w-[70px] aspect-square border-[1px] border-white border-solid rounded-full">

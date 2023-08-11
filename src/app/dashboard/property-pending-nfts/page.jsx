@@ -11,8 +11,8 @@ import Image from "next/image";
 
 
 function PendingNft() {
-  const [pendingNft, setPendingNft] = useState([1, 2, 3, 4,5, 6, 7, 8, 9, 10, 11, 12]);
-  
+  const [pendingNft, setPendingNft] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+
 
   const is_minted = false;
   const failed_reason = "KYC check did not pass"
@@ -20,8 +20,8 @@ function PendingNft() {
     <>
       <div className="py-4 w-full px-2 sm:px-10">
         {/* heading */}
-        <h1 className="text-heading-xs sm:text-heading-sm lg:text-heading-lg font-bold leading-[18px] sm:leading-[44px] text-black">
-          Pending Nfts
+        <h1 className="text-heading-sm lg:text-heading-lg font-semibold leading-[18px] sm:leading-[44px] text-black">
+          Pending NFTs
         </h1>
 
         {/* body */}
@@ -30,7 +30,7 @@ function PendingNft() {
             style={{
               backgroundColor: "white",
               border: '1px solid #e6d366'
-               
+
             }}
             className="w-full py-10 px-5 sm:p-10 rounded-[24px]"
           >
@@ -61,10 +61,10 @@ function PendingNft() {
                         )}
                       </div>
                       <div className="p-4 pb-6 space-y-2">
-                        <h3 className="text-[10px] sm:text-[13px] lg:text-[18px] font-medium">
-                          Jeremy sweyers
+                        <h3 className="text-xl font-medium">
+                          Jeremy Swyers
                         </h3>
-                        <p className="text-[8px] lg:text-[13px] w-full text-[#fa544d] font-normal">
+                        <p className="text-[12px] font-medium lg:text-[14px] w-full text-blue-900 ">
                           {failed_reason
                             ? failed_reason
                             : "This is an error message"}

@@ -1,11 +1,11 @@
 'use client'
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import propertyImg from "public/homee.jpeg"
 import Link from "next/link";
 import Image from "next/image";
 
 const Page = () => {
-    const [approved, setApproved] = useState([1,2,3,4,5,6,7,8,9,10,11,12]);
+  const [approved, setApproved] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
 
@@ -33,15 +33,15 @@ const Page = () => {
   const rangeEnd = Math.min(totalPages, rangeStart + visibleButtons - 1);
 
 
-//   temporary;
-const is_minted = true;
-      
-    return (
-        <>
+  //   temporary;
+  const is_minted = true;
+
+  return (
+    <>
       <div className="py-4 bg-white w-full px-2 sm:px-10">
         {/* heading */}
-        <h1 className="text-heading-xs font-bold sm:text-heading-sm lg:text-heading-lg font-graphik leading-[18px] sm:leading-[44px] text-black">
-          Approved Nfts
+        <h1 className="text-heading-sm lg:text-heading-lg font-semibold leading-[18px] sm:leading-[44px] text-black">
+          Approved NFTs
         </h1>
 
         {/* body */}
@@ -82,7 +82,7 @@ const is_minted = true;
                       </div>
                       <div className="p-4 pb-6 space-y-2">
                         <h3 className="text-[10px] sm:text-[13px] text-black lg:text-[18px] font-medium">
-                        Lisa Vicari
+                          Lisa Vicari
                         </h3>
                         <p className="text-[8px] lg:text-[13px] w-full text-[#fa544d] font-normal">
                           {item.failed_reason ? item.failed_reason : ""}
@@ -107,19 +107,18 @@ const is_minted = true;
             {/* pagination */}
 
             <div className="w-full mt-8 flex justify-center gap-4 [&>*]:border-0 [&>*]:cursor-pointer"
-              style={{display: 'none'}}
+              style={{ display: 'none' }}
             >
               <button
                 onClick={handlePreviousPage}
                 disabled={currentPage === 1}
-                className={`${
-                  currentPage === 1 ? "text-white/50" : "text-white"
-                } text-[18px] bg-white/0`}
+                className={`${currentPage === 1 ? "text-white/50" : "text-white"
+                  } text-[18px] bg-white/0`}
               >
                 {/* {"<"} */}
                 <span className="flex justify-center px-2 items-center gap-1 border-solid border-[1px] border-white rounded-[4px]">
-                <img src="/assets/icons/prev.svg" alt="prev icon" /> Prev
-              </span>
+                  <img src="/assets/icons/prev.svg" alt="prev icon" /> Prev
+                </span>
               </button>
               {rangeStart > 1 && (
                 <button className="text-white font-medium bg-white/0">
@@ -130,11 +129,10 @@ const is_minted = true;
                 const pageNumber = rangeStart + index;
                 return (
                   <button
-                    className={`text-white font-medium w-[30px] h-[30px] rounded-full ${
-                      pageNumber === currentPage
+                    className={`text-white font-medium w-[30px] h-[30px] rounded-full ${pageNumber === currentPage
                         ? "bg-gradient-to-r bg-[rgb(29,44,223)] hover:bg-primary-main/70"
                         : "bg-white/0"
-                    }`}
+                      }`}
                     key={pageNumber}
                     onClick={() => handlePageClick(pageNumber)}
                   >
@@ -148,23 +146,22 @@ const is_minted = true;
                 </button>
               )}
               <button
-                className={`${
-                  currentPage === totalPages ? "text-white/50" : "text-white"
-                } text-[18px] bg-white/0`}
+                className={`${currentPage === totalPages ? "text-white/50" : "text-white"
+                  } text-[18px] bg-white/0`}
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
               >
                 {/* {">"} */}
                 <span className="flex justify-center items-center gap-1 px-2 border-solid border-[1px] border-white rounded-[4px]">
-                Next <img src="/assets/icons/next.svg" alt="next icon" />
-              </span>
+                  Next <img src="/assets/icons/next.svg" alt="next icon" />
+                </span>
               </button>
             </div>
           </div>
         </div>
       </div>
     </>
-    )
+  )
 }
 
 export default Page;

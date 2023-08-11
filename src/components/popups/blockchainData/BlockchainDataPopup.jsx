@@ -14,13 +14,8 @@ const BlockchainDataPopup = ({ setDataPopup, data }) => {
               Blockchain Data
             </h2>
             <div onClick={handleCrossClick}>
-              <Image
-                src="/cross.svg"
-                alt=""
-                className="w-[18px] bg-black h-[18px] rounded sm:w-[27px] sm:h-[27px] absolute right-4 sm:right-4 top-[1rem] sm:top-[1rem] cursor-pointer"
-                width={30}
-                height={30}
-              />
+
+              <span className="material-icons cursor-pointer absolute right-4 sm:right-4 top-[1rem] sm:top-[1rem]" style={{ fontSize: "2rem" }}>close</span>
             </div>
           </div>
 

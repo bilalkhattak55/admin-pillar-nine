@@ -11,27 +11,27 @@ import downloadIcon from "public/assets/icons/pillar-nine-download.png";
 const Page = () => {
   // blockchain button on different screens
 
-//   const [blockchainButton, setBlockchainButton] = useState("");
+  //   const [blockchainButton, setBlockchainButton] = useState("");
   const [windowSize, setWindowSize] = useState("");
   const [dataPopup, setDataPopup] = useState(false);
 
-//   const handleSizing = () => {
-//     setWindowSize(window.innerWidth);
-//     if (windowSize < 650) {
-//       setBlockchainButton("Blockchain");
-//     } else {
-//       setBlockchainButton("View Blockchain Data");
-//     }
-//   };
+  //   const handleSizing = () => {
+  //     setWindowSize(window.innerWidth);
+  //     if (windowSize < 650) {
+  //       setBlockchainButton("Blockchain");
+  //     } else {
+  //       setBlockchainButton("View Blockchain Data");
+  //     }
+  //   };
 
-//   useEffect(() => {
-//     // handleSizing();
-//     window.addEventListener("resize", handleSizing);
+  //   useEffect(() => {
+  //     // handleSizing();
+  //     window.addEventListener("resize", handleSizing);
 
-//     return () => {
-//       window.removeEventListener("resize", handleSizing);
-//     };
-//   }, [windowSize]);
+  //     return () => {
+  //       window.removeEventListener("resize", handleSizing);
+  //     };
+  //   }, [windowSize]);
 
   //temperory;
   const is_minted = true;
@@ -44,18 +44,15 @@ const Page = () => {
 
   return (
     <>
-      
+
       <div className="py-4 w-full px-2 sm:px-10">
         <h1 className="text-heading-xs text-black font-bold sm:text-heading-sm lg:text-heading-lg font-graphik leading-[18px] sm:leading-[44px] ">
           Property NFT Details
         </h1>
         <div className="bg-[#e6d366] p-[1px] rounded-[24px] mt-10 mb-[7.5rem]">
           <div
-            style={{
-              backgroundColor: "white",
-              // "linear-gradient(94.09deg, #12134d 3.97%, #10053c 51.03%, #12134d 95.99%)",
-            }}
-            className="w-full py-10 px-5 sm:p-10 rounded-[24px]"
+
+            className="bg-white w-full py-10 px-5 sm:p-10 rounded-[24px]"
           >
             <div className="grid grid-cols-12  gap-3 sm:gap-6 h-[199px] sm:h-[328px]">
               <div className="col-span-6 md:col-span-5 lg:col-span-4">
@@ -118,15 +115,15 @@ const Page = () => {
                     </button>
                   </>
                 ) : ""
-                // (
-                //   <button
-                //     onClick={handleBlockchainDataPopup}
-                //     type="button"
-                //     className={`px-8 py-2 mt-8 bg-[#e6d366] rounded-[24px] text-black border-none cursor-pointer text-sm  font-semibold`}
-                //   >
-                //     {blockchainButton}
-                //   </button>
-                // )
+                  // (
+                  //   <button
+                  //     onClick={handleBlockchainDataPopup}
+                  //     type="button"
+                  //     className={`px-8 py-2 mt-8 bg-[#e6d366] rounded-[24px] text-black border-none cursor-pointer text-sm  font-semibold`}
+                  //   >
+                  //     {blockchainButton}
+                  //   </button>
+                  // )
                 }
 
                 {/* here we show the name of practitioner, added to this minting */}
@@ -141,10 +138,10 @@ const Page = () => {
                   </div>
                 )} */}
                 <div className="mt-6">
-                    <h4  className="text-[14px] md:text-[22px] font-semibold text-black">Poperty address</h4>
-                    <p className="text-black mt-2">
+                  <h4 className="text-[14px] md:text-[22px] font-semibold text-black">Poperty address</h4>
+                  <p className="text-black mt-2">
                     11111 Stoney View Ln, St. Louis, MO 63146, USA
-                    </p>
+                  </p>
                 </div>
               </div>
             </div>
@@ -178,8 +175,8 @@ const Page = () => {
                           {nft_gifted_user
                             ? "Gifted"
                             : is_minted
-                            ? "Mint"
-                            : "Pending"}
+                              ? "Mint"
+                              : "Pending"}
                         </td>
                         <td>{docCategory}</td>
 
