@@ -3,7 +3,7 @@ import React from "react";
 import PlacesAutocomplete, {
     geocodeByAddress,
 } from "react-places-autocomplete";
-// import { OpenLocationCode } from "open-location-code";
+import { OpenLocationCode } from "open-location-code";
 
 const AutocompleteAddress = ({
     google,
@@ -17,7 +17,7 @@ const AutocompleteAddress = ({
     setSelectedCountry,
     setSelectedCity,
 }) => {
-    // var openLocationCode = new OpenLocationCode();
+    var openLocationCode = new OpenLocationCode();
 
     const handleChange = (newAddress) => {
         setSelectedAddress("");
@@ -60,16 +60,16 @@ const AutocompleteAddress = ({
             setSelectedAddress(results[0].formatted_address);
             setAddress(results[0].formatted_address);
 
-            // setLatLngPlusCode &&
-            //     setLatLngPlusCode({
-            //         lat: results[0]?.geometry?.location?.lat(),
-            //         lng: results[0]?.geometry?.location?.lng(),
-            //         plusCode: openLocationCode?.encode(
-            //             results[0]?.geometry?.location?.lat(),
-            //             results[0]?.geometry?.location?.lng()
-            //         ),
-            //         place_id: results[0]?.place_id,
-            //     });
+            setLatLngPlusCode &&
+                setLatLngPlusCode({
+                    lat: results[0]?.geometry?.location?.lat(),
+                    lng: results[0]?.geometry?.location?.lng(),
+                    plusCode: openLocationCode?.encode(
+                        results[0]?.geometry?.location?.lat(),
+                        results[0]?.geometry?.location?.lng()
+                    ),
+                    place_id: results[0]?.place_id,
+                });
             setSelectedProvince && setSelectedProvince(province);
             setSelectedCountry && setSelectedCountry(country);
             setSelectedCity && setSelectedCity(city);
@@ -94,7 +94,7 @@ const AutocompleteAddress = ({
                 {({
                     getInputProps,
                     suggestions,
-                    getSuggestionItemProps /*loading*/,
+                    getSuggestionItemProps,
                 }) => (
                     <div className="space-y-1.5 relative mt-2">
                         <div className="bg-[#e6d466] p-0.5 rounded-[24px]">

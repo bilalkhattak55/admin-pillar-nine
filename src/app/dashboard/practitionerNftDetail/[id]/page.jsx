@@ -66,7 +66,7 @@ const PractitionerNftDetail = () => {
                 />
             )}
             <div className="py-4 w-full px-2 sm:px-10">
-                <h1 className="text-heading-xs sm:text-heading-sm lg:text-heading-lg leading-[18px] sm:leading-[44px] text-black">
+                <h1 className="text-heading-xs sm:text-heading-sm lg:text-heading-lg font-semibold leading-[18px] sm:leading-[44px] text-black">
                     Practitioner NFT Details
                 </h1>
                 <div className="bg-primary p-[1px] rounded-[24px] mt-10 mb-[7.5rem]">
@@ -93,7 +93,7 @@ const PractitionerNftDetail = () => {
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus reprehenderit ducimus quos excepturi maxime unde est saepe repellendus, cum accusantium in culpa ipsam, architecto laudantium dolorum at eveniet nisi nesciunt.
                                     </p>
                                     <div className="bg-primary/50 rounded-lg flex items-center justify-center gap-2 w-full sm:w-fit py-2 px-3 my-4 max-md:mx-auto">
-                                        <p className="text-[9px] sm:text-[12px] md:text-[10px] lg:text-[13px] font-semibold text-blue-900">
+                                        <p className="text-[9px] sm:text-[12px] md:text-[10px] lg:text-[14px] font-semibold text-blue-900">
                                             Wallet Address:
                                         </p>
                                         <p

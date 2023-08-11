@@ -25,8 +25,8 @@ const MintPropertyNftForm = () => {
   const [selectedAddress, setSelectedAddress] = useState("");
   const [entityDocument, setEntityDocument] = useState(null);
   const [propertyCategoryOptions, setPropertyCategoryOptions] = useState([
-    { value: true, label: "Yes" },
-    { value: false, label: "No" },
+    { value: true, label: "No" },
+    { value: false, label: "Yes" },
   ]);
   const [userData, setUserData] = useState({});
   const [data, setData] = useState({});
@@ -93,14 +93,14 @@ const MintPropertyNftForm = () => {
     />
   )} */}
       <div className="py-4 w-full px-10">
-        <h1 className="mb-5 text-heading-xs sm:text-heading-sm lg:text-heading-lg leading-[18px] sm:leading-[44px] text-black">
+        <h1 className="mb-5 text-heading-xs sm:text-heading-sm font-semibold lg:text-heading-lg leading-[18px] sm:leading-[44px] text-black">
           Mint Property NFT
         </h1>
 
         <div className="bg-primary p-[1px] rounded-[24px]">
           <div className="bg-white w-full py-10 px-[12%] lg:px-[201px] xl:px-[250px] rounded-[24px]">
             <form className="flex flex-col gap-5">
-              <h2 className="text-heading-xs sm:text-heading-sm md:text-heading-lg text-black">
+              <h2 className="text-heading-xs sm:text-heading-sm font-semibold md:text-heading-lg text-black">
                 Step One: Property Information
               </h2>
               <InputField
@@ -117,7 +117,7 @@ const MintPropertyNftForm = () => {
                 labelName="Property:"
                 grayText="Is this property in a trust, LLC, or business entity?"
                 dropdownList={propertyCategoryOptions}
-                initialValue={"Yes"}
+                initialValue={"No"}
                 inputOnChangeFunc={handleChange}
                 selected={selectProperty}
                 setSelected={setSelectProperty}
